@@ -25,3 +25,20 @@ CREATE TABLE monstrobicho (
     PRIMARY KEY (id)
 );
 
+create table descricao(
+  id SERIAL NOT NULL,
+  nome VARCHAR(650) NOT NULL,
+  monstrobicho_id INTEGER REFERENCES monstrobicho(id),
+  PRIMARY KEY (id)
+);
+
+create table aparencia(
+  id SERIAL NOT NULL,
+  aparencia VARCHAR(150) NOT NULL,
+  monstrobicho_nome INTEGER REFERENCES monstrobicho(id),
+  PRIMARY KEY (id)
+);
+
+insert into nv_perigo(nome) values ('Inofensivo')
+insert into nv_perigo(nome) values ('Se provocado fere grave')
+select * from nv_perigo
